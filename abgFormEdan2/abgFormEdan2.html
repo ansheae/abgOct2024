@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABG Official Result Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="header">
+        <div class="header-title">
+          <!-- eamclogo-container -->
+          <div class="eamcLogo-container">
+            <img src="../images/eamcLogo.png" alt="Logo" class="logo" />
+          </div>
+          <!-- eamclogo-container -->
+
+          <!-- text container -->
+          <div class="text-container">
+            <h5>
+              Republic of the Philippines<br />DEPARTMENT OF HEALTH<br />East
+              Avenue Medical Center
+            </h5>
+          </div>
+          <!-- text container -->
+
+          <!-- dohLogo-container -->
+          <div class="dohLogo-container">
+            <img src="../images/dohLogo.png" alt="dohLogo" class="logo" />
+          </div>
+          <!-- dohLogo-container -->
+        </div>
+        <!-- header-title -->
+
+        <!-- header-right -->
+        <div class="header-right">
+          <table>
+            <tr>
+              <td>Reference Code:</td>
+            </tr>
+            <tr>
+              <td>FM-MED-PUL-001</td>
+            </tr>
+            <tr>
+              <td>Rev. No:</td>
+            </tr>
+            <tr>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Date Effective:</td>
+            </tr>
+            <tr>
+              <td>October 1, 2013</td>
+            </tr>
+          </table>
+        </div>
+        <!-- header-right -->
+      </div>
+      <!-- header -->
+
+      <h4>ARTERIAL BLOOD GASES OFFICIAL RESULT</h4>
+
+      <form>
+        <div class="form-row">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="abgE2FormName"
+            class="input-long name-longer"
+          />
+
+          <label for="age-gender">Age/Gender:</label>
+          <input type="text" id="E2age-gender" class="input-short" />
+
+          <label for="ward">Ward:</label>
+          <input type="text" id="abgE2FormRoom" class="input-short" />
+
+          <label for="date">Date:</label>
+          <input type="text" id="abgE2FormDate" class="input-short" />
+        </div>
+
+        <div class="form-row">
+          <label for="diagnosis">Diagnosis:</label>
+          <input type="text" id="abgE2FormDiagnosis" class="input-long" />
+
+          <label for="physician">Physician:</label>
+          <input
+            type="text"
+            id="abgE2FormPhysician"
+            class="input-long physician-longer"
+          />
+
+          <label for="time">Time:</label>
+          <input type="text" id="abgE2FormTime" class="input-short" />
+        </div>
+
+        <div class="form-row-temp">
+          <label for="temp">Temp:</label>
+          <input type="text" id="tempE2" class="input-short" />
+          <label for="hgb">HGB:</label>
+          <input type="text" id="hgbE2" class="input-short" />
+          <label for="fio2">FIO2:</label>
+          <input type="text" id="abgE2FormFio2" class="input-short" />
+        </div>
+
+        <!-- values -->
+        <div class="values">
+          <label for="ph">pH</label><input type="text" id="abgE2FormPh" />
+          <label for="pco2">pCO2</label
+          ><input type="text" id="abgE2FormPco2" /> <label for="po2">pO2</label
+          ><input type="text" id="abgE2FormPo2" />
+
+          <label for="hco3">HCO3</label><input type="text" id="abgE2FormHco3" />
+        </div>
+        <div class="values">
+          <label for="be">ABE</label><input type="text" id="abgE2FormBe" />
+          <label for="sao2">SaO2</label><input type="text" id="abgE2FormSao2" />
+
+          <label for="ctco2">ctCO2</label
+          ><input type="text" id="abgE2FormTco2" />
+        </div>
+        <!-- values -->
+
+        <!-- checkbox-section -->
+        <div class="checkbox-containter">
+          <div class="checkbox-section row1">
+            <label><input type="checkbox" /> Adequate Oxygenation</label>
+            <label><input type="checkbox" /> Hypoxemia</label>
+          </div>
+          <div class="checkbox-section row2">
+            <label><input type="checkbox" /> Mild</label>
+            <label><input type="checkbox" /> Moderate</label>
+            <label><input type="checkbox" /> Severe</label>
+          </div>
+
+          <div class="checkbox-section row3">
+            <label><input type="checkbox" /> Respiratory</label>
+            <label><input type="checkbox" /> Acidosis</label>
+            <label><input type="checkbox" /> Uncompensated</label>
+            <label><input type="checkbox" /> Mild</label>
+          </div>
+
+          <div class="checkbox-section row4">
+            <label><input type="checkbox" /> Metabolic</label>
+            <div class="checkbox-section row4of2">
+              <label><input type="checkbox" /> Alkalosis</label>
+              <label><input type="checkbox" /> Partially Compensated</label>
+            </div>
+            <div class="checkbox-section row4of3">
+              <label><input type="checkbox" /> Moderate</label>
+            </div>
+          </div>
+
+          <div class="checkbox-section row5">
+            <label><input type="checkbox" /> Fully Compensated</label>
+            <label><input type="checkbox" /> Severe</label>
+          </div>
+        </div>
+        <!-- checkbox-section -->
+
+        <!-- rtod/fellow -->
+        <!-- 
+        <div class="signature">
+          <div class="prepared-by">
+            <p>Prepared by:</p>
+            <label for="rtod"></label>
+            <input type="text" id="abgFormRtod" rows="2" class="input-long" />
+            <p>RESPIRATORY THERAPIST ON DUTY</p>
+          </div> -->
+
+        <div class="signature">
+          <div class="prepared-by">
+            <p>Prepared by:</p>
+            <label for="rtod"></label>
+            <textarea
+              area
+              input
+              type="text"
+              id="abgE2FormRtod"
+              rows="2"
+              class="input-long"
+            ></textarea>
+            <!-- Add this style -->
+            <p>RESPIRATORY THERAPIST ON DUTY</p>
+          </div>
+
+          <div class="interpreted-by">
+            <p>Interpreted by:</p>
+            <label for="fellow"></label>
+            <textarea
+              area
+              input
+              type="text"
+              id="abgE2FormFellow"
+              rows="2"
+              class="input-long"
+            ></textarea>
+            <p>PULMO CONSULTANT/PULMO RESIDENT</p>
+          </div>
+
+          <!-- rtod/fellow -->
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Call the function to populate the form when the page loads
+      window.onload = function () {
+        passInputToFormE2();
+      };
+    </script>
+  </body>
+</html>

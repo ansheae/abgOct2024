@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABG System</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Arterial Blood Gas</h1>
+      </header>
+    </div>
+
+    <section class="container">
+      <div class="column"> 
+        <h2>EDAN 1</h2>
+
+        <!-- Submit Functions  -->
+         <form id="edan1form"
+          action="../abgForm/abgForm.html"
+          method="GET"
+          onsubmit="return handleSubmitEdan1(event)"
+        > 
+
+    
+          <!-- Submit Functions  -->
+
+          <!-- Input fields for EDAN 1 -->
+          <!-- <label for="edanMachineNum">Machine No.:</label> -->
+          <input
+            type="text"
+            class="edan"
+            name="edanMachineNum"
+            placeholder="Machine No."
+            required
+          />
+          <input
+            type="time"
+            class="edan"
+            name="edanTimeReceived"
+            placeholder="Time Received"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanPatientName"
+            placeholder="Patient Name"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanAge"
+            placeholder="Age"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanGender"
+            placeholder="Gender"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanRoom"
+            placeholder="Room"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanFio2"
+            placeholder="Fio2"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanPh"
+            placeholder="pH"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanPco2"
+            placeholder="pCo2"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanPo2"
+            placeholder="pO2"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanHco3"
+            placeholder="hCo3"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanBe"
+            placeholder="be"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanTco2"
+            placeholder="tco2"
+            required
+          />
+          <input
+            type="text"
+            class="edan"
+            name="edanSao2"
+            placeholder="sao2"
+            required
+          />
+          
+
+        <!--  BUTTONS  -->
+        <button class="btn btn-primary" type="submit">
+          <i class="fa fa-plus"></i> Submit
+        </button>
+
+        <!-- <a href="#" class="btn btn-primary">
+          <i class="fa fa-arrow-circle-left"></i> Back
+        </a> -->
+
+
+<!-- Clear Button -->
+<button type="button" class="btn btn-danger" onclick="clearEdan1Form()">Clear</button>
+
+<br>
+<!-- print abg form 1 -->
+<a href="../abgForm/abgForm.html" class="btn btn-success pull-right" onclick="window.print()">
+  <span class="glyphicon glyphicon-print"></span> Print Result
+</a>
+<br>
+
+<!-- Dropdown for RTOD -->
+<label for="edanRtod">RTOD:</label>
+<select id="edanRtod" name="edanRtod" onchange="rtodInputToFormEdan1()">
+  <option value="">--Select RTOD--</option>
+  <option value="Ansherine Aaron, RTRP; Lic No. 0001053">Aaron</option>
+  <option value="EUNICA MARIE T. TAMBALONG Lic No. 0002958">Tambalong</option>
+  <option value="Fauziyah Lyka L. Calim, RTRP Lic. No. 004263">Calim</option>
+</select>
+<input
+  type="text"
+  class="edanRtod"
+  name="edanRtodTextBox"
+  placeholder="RTOD"
+/>
+
+<!-- Dropdown for Fellow Reader -->
+<label for="edanFellow">Fellow Reader: </label>
+<br>
+<select id="edanFellow" name="edanFellow" onchange="fellowInputToFormEdan1()">
+  <option value="">--Select Fellow--</option>
+  <option value="XAVIER R. ROCAMORA, MD; LIC NO. 0138528">Doc.Rocamora</option>
+  <option value="KATHLEEN M. GALAM, MD; LIC NO. 0131380">Doc.Galam</option>
+  <option value="KENTO TAKAHASHI, MD; LIC NO. 0141159">Doc.Takahashi</option>
+  <option value="Leonie Mae P. Mangila, MD; Lic No.0137007">Doc.Mangila</option>
+  <option value="Ian Denis S. Dela Cruz, MD; Lic No. 0137240">Doc.Dela Cruz</option>
+  <option value="Sherryl G. Vidal, MD; Lic No. 00000">Doc.Vidal</option>
+</select>
+<input
+  type="text"
+  class="edanFellow"
+  name="edanFellowTextBox"
+  placeholder="Fellow of the Month"
+/>
+
+          <!-- DROP DOWN FELLOWS  Edan 1 -->
+
+  
+        
+</div>    
+</form> 
+
+<!-- Input fields for EDAN 1 -->
+<!-- //////////////////////////////////////////////////////     -->
+<!-- //////////////////////////////////////////////////////     -->
+<!-- 
+    
+
+
+
+
+
+-->
+
+<!-- //////////////////////////////////////////////////////     -->
+<!-- //////////////////////////////////////////////////////     -->
+    <!-- Edan Input 2 -->
+
+    <div class="column">
+      <h2>EDAN 2 </h2>
+      <form id="edan2form"
+      action="../abgFormEdan2/abgFormEdan2.html"
+      method="GET"
+      onsubmit="return handleSubmitEdan2(event)"
+    > 
+      <!-- <form id="abgForm" onsubmit="return handleSubmit(event)"> -->
+        <!-- Submit Functions  -->
+
+        <!-- Input fields for EDAN -->
+        <input
+          type="text"
+          class="edan"
+          name="edanE2MachineNum"
+          placeholder="Machine No."
+          required
+        />
+        <input
+          type="time"
+          class="edan"
+          name="edanE2TimeReceived"
+          placeholder="Time Received"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2PatientName"
+          placeholder="Patient Name"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Age"
+          placeholder="Age"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Gender"
+          placeholder="Gender"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Room"
+          placeholder="Room"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Fio2"
+          placeholder="Fio2"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Ph"
+          placeholder="pH"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Pco2"
+          placeholder="pCo2"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Po2"
+          placeholder="pO2"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Hco3"
+          placeholder="hCo3"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Be"
+          placeholder="be"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Tco2"
+          placeholder="tco2"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE2Sao2"
+          placeholder="sao2"
+          required
+        />
+
+
+
+                <!--  BUTTONS  -->
+                <button class="btn btn-primary" type="submit">
+                  <i class="fa fa-plus"></i> Submit
+                </button>
+        
+                <!-- <a href="#" class="btn btn-primary">
+                  <i class="fa fa-arrow-circle-left"></i> Back
+                </a> -->
+        
+  
+<!-- Clear Button 2 -->
+<button type="button" class="btn btn-danger" onclick="clearEdan2Form()">Clear</button>
+
+<br>
+<!-- print abg form 2 -->
+<a href="../abgFormEdan2/abgFormEdan2.html" class="btn btn-success pull-right" onclick="window.print()">
+  <span class="glyphicon glyphicon-print"></span> Print Result
+</a>
+<br>
+
+<!-- Dropdown for RTOD -->
+<label for="edanE2Rtod">RTOD:</label>
+<select id="edanE2Rtod" name="edanRtod" onchange="rtodInputToFormEdan2()">
+  <option value="">--Select RTOD--</option>
+  <option value="Ansherine Aaron, RTRP; Lic No. 0001053">Aaron</option>
+  <option value="EUNICA MARIE T. TAMBALONG Lic No. 0002958">Tambalong</option>
+  <option value="Fauziyah Lyka L. Calim, RTRP Lic. No. 004263">Calim</option>
+</select>
+<input
+  type="text"
+  class="edanE2Rtod"
+  name="edanE2RtodTextBox"
+  placeholder="RTOD"
+/>
+
+<!-- Dropdown for Fellow Reader -->
+<label for="edanE2Fellow">Fellow Reader: </label>
+<br>
+<select id="edanE2Fellow" name="edanE2Fellow" onchange="fellowInputToFormEdan2()">
+  <option value="">--Select Fellow--</option>
+  <option value="XAVIER R. ROCAMORA, MD; LIC NO. 0138528">Doc.Rocamora</option>
+  <option value="KATHLEEN M. GALAM, MD; LIC NO. 0131380">Doc.Galam</option>
+  <option value="KENTO TAKAHASHI, MD; LIC NO. 0141159">Doc.Takahashi</option>
+  <option value="Leonie Mae P. Mangila, MD; Lic No.0137007">Doc.Mangila</option>
+  <option value="Ian Denis S. Dela Cruz, MD; Lic No. 0137240">Doc.Dela Cruz</option>
+  <option value="Sherryl G. Vidal, MD; Lic No. 00000">Doc.Vidal</option>
+</select>
+<input
+  type="text"
+  class="edanE2Fellow"
+  name="edanE2FellowTextBox"
+  placeholder="Fellow of the Month"
+/>
+
+          <!-- DROP DOWN FELLOWS  Edan 2 -->
+
+
+      </form>
+    </div>
+    <!-- Edan Input 2 -->
+<!-- //////////////////////////////////////////////////////     -->
+<!-- //////////////////////////////////////////////////////     -->
+    <!-- 
+    
+
+
+
+
+
+-->
+
+
+<!-- //////////////////////////////////////////////////////     -->
+<!-- //////////////////////////////////////////////////////     -->
+<!-- Edan Input 3 -->
+    <div class="column">
+      <h2>EDAN 3</h2>
+      <form id="edan3form"
+      action="../abgFormEdan3/abgFormEdan3.html"
+      method="GET"
+      onsubmit="return handleSubmitEdan3(event)"
+    > 
+      <!-- <form id="abgForm" onsubmit="return handleSubmit(event)"> -->
+        <!-- Submit Functions  -->
+
+        <!-- Input fields for EDAN -->
+        <input
+          type="text"
+          class="edan"
+          name="edanE3MachineNum"
+          placeholder="Machine No."
+          required
+        />
+        <input
+          type="time"
+          class="edan"
+          name="edanE3TimeReceived"
+          placeholder="Time Received"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3PatientName"
+          placeholder="Patient Name"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Age"
+          placeholder="Age"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Gender"
+          placeholder="Gender"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Room"
+          placeholder="Room"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Fio2"
+          placeholder="Fio2"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Ph"
+          placeholder="pH"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Pco2"
+          placeholder="pCo2"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Po2"
+          placeholder="pO2"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Hco3"
+          placeholder="hCo3"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Be"
+          placeholder="be"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Tco2"
+          placeholder="tco2"
+          required
+        />
+        <input
+          type="text"
+          class="edan"
+          name="edanE3Sao2"
+          placeholder="sao2"
+          required
+        />
+
+
+
+                <!--  BUTTONS  -->
+                <button class="btn btn-primary" type="submit">
+                  <i class="fa fa-plus"></i> Submit
+                </button>
+        
+                <!-- <a href="#" class="btn btn-primary">
+                  <i class="fa fa-arrow-circle-left"></i> Back
+                </a> -->
+        
+  
+<!-- Clear Button -->
+<button type="button" class="btn btn-danger" onclick="clearEdan3Form()">Clear</button>
+
+<br>
+<!-- print abg form 3 -->
+<a href="../abgFormEdan3/abgFormEdan3.html" class="btn btn-success pull-right" onclick="window.print()">
+  <span class="glyphicon glyphicon-print"></span> Print Result
+</a>
+
+<br>
+
+<!-- Dropdown for RTOD -->
+<label for="edanE3Rtod">RTOD:</label>
+<select id="edanE3Rtod" name="edanRtod" onchange="rtodInputToFormEdan3()">
+  <option value="">--Select RTOD--</option>
+  <option value="Ansherine Aaron, RTRP; Lic No. 0001053">Aaron</option>
+  <option value="EUNICA MARIE T. TAMBALONG; Lic No. 0002958">Tambalong</option>
+  <option value="Fauziyah Lyka L. Calim; RTRP Lic. No. 004263">Calim</option>
+</select>
+<input
+  type="text"
+  class="edanE3Rtod"
+  name="edanE3RtodTextBox"
+  placeholder="RTOD"
+/>
+
+<!-- Dropdown for Fellow Reader -->
+<label for="edanE3Fellow">Fellow Reader: </label>
+<br>
+<select id="edanE3Fellow" name="edanE3Fellow" onchange="fellowInputToFormEdan3()">
+  <option value="">--Select Fellow--</option>
+  <option value="XAVIER R. ROCAMORA, MD; LIC NO. 0138528">Doc.Rocamora</option>
+  <option value="KATHLEEN M. GALAM, MD; LIC NO. 0131380">Doc.Galam</option>
+  <option value="KENTO TAKAHASHI, MD; LIC NO. 0141159">Doc.Takahashi</option>
+  <option value="Leonie Mae P. Mangila, MD; Lic No.0137007">Doc.Mangila</option>
+  <option value="Ian Denis S. Dela Cruz, MD; Lic No. 0137240">Doc.Dela Cruz</option>
+  <option value="Sherryl G. Vidal, MD; Lic No. 00000">Doc.Vidal</option>
+</select>
+<input
+  type="text"
+  class="edanE3Fellow"
+  name="edanE3FellowTextBox"
+  placeholder="Fellow of the Month"
+/>
+
+          <!-- DROP DOWN FELLOWS  Edan 3-->
+
+
+      </form>
+    </div>
+    <!-- Edan Input 3 -->
+<!-- //////////////////////////////////////////////////////     -->
+<!-- //////////////////////////////////////////////////////     -->
+
+    
+
+
+
+
+
+
+
+
+    <!-- Google Sheet View -->
+    <div class="dataGooglesheet">
+      <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTAyuCcC_6v6WJrR2ueiOiFgw6j-299BxYEt53PriFGEfc4H5q-jW3cLn27cFBO2SD5-MPhVAw4m_xY/pubhtml?gid=1784723977&amp;single=true&amp;widget=true&amp;headers=false"
+        width="100%"
+        height="600"
+        frameborder="0"
+      ></iframe>
+      
+    </div><!-- Google Sheet View -->
+    
+
+    <script>
+      window.onload = function () {
+        currentDateAndTime();
+        currentDateAndTimeEdan2();
+        currentDateAndTimeEdan3();
+      };
+    </script>
+  </body>
+</html>
